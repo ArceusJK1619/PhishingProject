@@ -1,0 +1,110 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                text-align: center;
+                font-size: 200px;
+                color:orange;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border: 1px solid orange;
+                -moz-box-shadow: 0 0 100px orange;
+                -webkit-box-shadow: 0 0 100px orange;
+                -o-box-shadow: 0 0 100px orange;
+                -ms-box-shadow: 0 0 100px orange;
+                box-shadow: 0 0 70px orange;
+            }
+            body{
+                background-image: linear-gradient(to  right , rgb(71, 70, 70) ,rgb(0, 0, 0),rgb(99, 97, 97) ) ;
+                color: orange;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                text-shadow: 0 0 100px orange;
+            }
+            .form{
+                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-shadow: 0 0 100px orange;
+            }
+            label{
+                font-size: 50px;
+            }
+            input[type="text"]{
+                border-radius: 10px 20px;
+                border-color: orange;
+                padding: 8px;
+                width: 500px;
+                margin-bottom: 50px;
+                padding-left: 50px;
+                translate: 0 -10px;
+            }
+
+            input[type="text"]:focus{
+                border: 1px solid orange;
+                -moz-box-shadow: 0 0 100px orange;
+                -webkit-box-shadow: 0 0 100px orange;
+                -o-box-shadow: 0 0 100px orange;
+                -ms-box-shadow: 0 0 100px orange;
+                box-shadow: 0 0 70px orange;
+                translate: 0px -20px;
+                transition: 0.5s;
+            }
+
+            input[type="submit"]{
+                border-radius: 10px 20px;
+                border-color: orange;
+                width: 100px;
+                height: 50px;
+                font-size: x-large;
+                color: orange;
+                background-color: transparent;
+            }
+            input[type="submit"]:hover{
+                color: black;
+                background-color: orange;
+                transition: 0.5s;
+            }
+            
+            .result{
+                text-align: center;
+                margin-top: 100px;
+                font-size: x-large;
+                text-shadow: 0 0 100px orange;
+                border: 1px solid orange;
+                -moz-box-shadow: 0 0 35px orange;
+                -webkit-box-shadow: 0 0 35px orange;
+                -o-box-shadow: 0 0 35px orange;
+                box-shadow: 0 0 35px; 
+                box-shadow: {{color}};
+                color: {{color}};  
+            }
+
+            .result-pic{
+                width: 250px;
+                height: auto;
+                margin-right: 50px;
+                vertical-align: middle;
+
+            }
+
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 class="title">OnVizz</h1>
+        <div class="form">
+        <form method="post" action="/">
+            <img src={{ url_for('static', filename= image) }} class="result-pic">
+            <label for="url">Enter URL: </label>
+            <input type="text" id="url" name="url"><br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+        {% if prediction %}
+        <div class="result">{{ prediction }}</div>
+        {% endif %}
+    <script>
+    </script>
+    </body>
+    </html>
