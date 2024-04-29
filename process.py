@@ -100,23 +100,23 @@ def count_empty_references(url):
         return None
     
 def get_params(url):
-    a = url_length(url)
-    b = extract_domain(url)
-    c = domain_length(b)
-    d = is_https(url)
-    e = count_letters_in_url(url)
-    f = count_digits_in_url(url)
-    g = count_equals_in_url(url)
-    h = count_QMarks_in_url(url)
-    i = count_ampersand_in_url(url)
-    j = count_specialCharachters_in_url(url)
-    k = count_css_files_in_url(url)
-    l = count_js_files_in_url(url)
-    m = count_self_referencing_links(url)
-    n = count_external_links(url)
-    o = count_empty_references(url)
+    url_len = url_length(url)
+    domain = extract_domain(url)
+    domain_len = domain_length(domain)
+    ishttps= is_https(url)
+    count_letters = count_letters_in_url(url)
+    count_digits= count_digits_in_url(url)
+    count_equals= count_equals_in_url(url)
+    count_qmarks = count_QMarks_in_url(url)
+    count_ands = count_ampersand_in_url(url)
+    count_specialChar = count_specialCharachters_in_url(url)
+    count_css = count_css_files_in_url(url)
+    count_js  = count_js_files_in_url(url)
+    count_selfref  = count_self_referencing_links(url)
+    count_externalref = count_external_links(url)
+    count_emptyref= count_empty_references(url)
 
-    inputs = [[a,c,e,f,g,h,i,j,d,k,l,m,o,n]]
+    inputs = [[url_len,domain_len,count_letters,count_digits,count_equals,count_qmarks,count_ands,count_specialChar,ishttps,count_css,count_js,count_selfref,count_emptyref,count_externalref]]
     return inputs
 
 def predict(url):
