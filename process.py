@@ -140,3 +140,7 @@ def predict(url):
     
     print(prediction , color , image)
     return prediction , color , image
+
+
+def print():
+    print("Hello")
